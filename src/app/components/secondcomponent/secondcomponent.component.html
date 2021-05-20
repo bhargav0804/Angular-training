@@ -1,0 +1,12 @@
+<p>Designation: {{getjobTitle()}}</p>
+<div>
+    <ul *ngFor='let  per of persons'>
+        <li> {{per.name}} </li>
+    </ul>
+    <!--property binding-->
+    <button [disabled]="buttonDisabled"
+     (click) = "onClick($event)">
+     <!--event binding-->
+        Click Here</button>
+        {{position}}
+</div>

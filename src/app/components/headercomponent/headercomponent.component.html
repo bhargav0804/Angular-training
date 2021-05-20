@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div>
+    <div class="header">
+        <nav>
+            <a href="/image/">Image Gallery</a> |
+            <a href="/html/">Home</a> |
+            <a href="/css/">Contact</a> |
+            <a href="/js/">page1</a> |
+            <a href="/python/">About us</a>
+          </nav>
+    </div>
+        
+    <div class="row">
+        <div class="col-sm-3" style="background-color:lavender;">Left section</div>
+        <div class="col-sm-6" style="background-color:lavenderblush;">
+            <table border=0 *ngIf="images && images.length">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Images</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let img of images">
+                        <td> {{img.imgName | titlecase}}</td>
+                        <td>
+                        
+                            <img src="../../../assets/Kerala-backwater.jpg" class="mr-2" style="width:100px;">
+                        </td>
+                        <td> {{img.imgDescription | titlecase}} </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="col-sm-3" style="background-color:lavender;">Right section</div>
+    </div>
+    <footer>
+        <p>
+            Author: cybage software <br>
+            <a href="mailto:cybage@example.com">cybage@example.com</a>
+        </p>
+    </footer>
+</div>
+<div>
+    <app-add-image></app-add-image>
+</div>
+
+<div class="row">
+    <div class="card col-sm-4" style="width: 18rem;height:350px;">
+        <img src="../../../assets/unnamed-removebg-preview.png" class="card-img-top" alt="natural satellite" style="width:280px;height:200px;">
+        <div class="card-body">
+        <p class="card-text">some description</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>    
+        <button class="btn btn-primary" (click)="onClick()"> Details</button>
+        </div>
+    </div>
+</div>
+
+
+

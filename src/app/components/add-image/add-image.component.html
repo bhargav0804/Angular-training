@@ -1,0 +1,28 @@
+<!-- <<p>add-image works!</p> -->
+<h1>Add Image using Template form</h1>
+<form #imageForm="ngForm" 
+    (submit)="addImage(imageForm)">
+    Enter Image Name:
+    <input type="text" name="imgName" #imgName='ngModel'
+     [(ngModel)]="newImage.imgName" required/><br/>
+     <span *ngIf="!imgName.valid && imgName.touched">
+         <span *ngIf="imgName.errors?.required">
+             Image name is Mandatory
+         </span>
+     </span><br/>
+    Enter Image src:
+    <input type="text" name="imgSrc" #imgSrc='ngModel'
+    [(ngModel)]="newImage.imgSrc" /><br/>
+    Enter Image category:
+    <input type="text" name="imgCategory" #imgCategory='ngModel'
+    [(ngModel)]="newImage.imgCategory" pattern="^[a-zA-Z]+$" /><br/>
+    <span *ngIf="!imgCategory.valid && imgCategory.touched">
+        <span *ngIf="imgCategory.errors?.pattern">
+           Category is inValid
+        </span>
+    </span><br/>
+    Enter Image description:
+    <input type="text" name="imgDescription" #imgDescription='ngModel'
+    [(ngModel)]="newImage.imgDescription" /><br/>
+    <input type="submit" value="Add" [disabled]="!imageForm.valid"/>
+</form>

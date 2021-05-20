@@ -1,0 +1,39 @@
+<div>
+    <h1>Games List</h1>
+    <label>GameId</label>
+    <input type="text"><br/><br/>
+    <label>GameName</label>
+    <input type="text"><br/><br/>
+    <label>genre</label>
+    <input type="text"><br/><br/>
+    <label>players</label>
+    <input type="text"><br/><br/>
+    <button>Add newGame</button>
+    <br/><br/>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>Game ID</th>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>players</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let game of games'>
+                <td>{{game.gameId}}</td>
+                <td>{{game.gameName}}</td>
+                <td>{{game.gameGenre}}</td>
+                <td>{{game.players}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="addgame()">Add Game</button>
+    <br/>
+    <label>Add an item: <input #newItem></label>
+<button (click)="addNewItem(newItem.value)">
+    Add to parent's list</button>
+    <br/><br/>
+    <!-- <app-add-game [messageOfChild]="messageForChild"
+    (newItemEvent)="GetData($event)"></app-add-game> -->
+</div>
